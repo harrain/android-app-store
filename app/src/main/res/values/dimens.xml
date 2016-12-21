@@ -1,0 +1,25 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="listView_imageItem_height">200dp</dimen>
+
+
+    <dimen name="home_headItem_height">134dp</dimen>
+    <dimen name="drawerLayout_menuDevider">20dp</dimen>
+
+    <dimen name="list_item_title_size">16dp</dimen>
+    <dimen name="list_item_loadmore_height">40dp</dimen>
+    <dimen name="list_item_margin">9dp</dimen>
+    <dimen name="home_picture_height">134dp</dimen>
+    <dimen name="list_item_rating_height">14dp</dimen>
+    <dimen name="app_detail_rating_margin">5dp</dimen>
+    <dimen name="des_iv_width">14dp</dimen>
+    <dimen name="des_iv_height">14dp</dimen>
+    <dimen name="des_tv_size">14dp</dimen>
+    <dimen name="safe_iv_width">34dp</dimen>
+    <dimen name="safe_iv_height">15dp</dimen>
+    <dimen name="screen_iv_width">150dp</dimen>
+    <dimen name="screen_iv_height">250dp</dimen>
+</resources>

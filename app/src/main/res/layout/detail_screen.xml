@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/screen_1"
+        android:layout_width="@dimen/screen_iv_width"
+        android:layout_height="@dimen/screen_iv_height"
+        android:paddingRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+    <ImageView
+        android:id="@+id/screen_2"
+        android:layout_width="@dimen/screen_iv_width"
+        android:layout_height="@dimen/screen_iv_height"
+        android:layout_toRightOf="@id/screen_1"
+        android:paddingRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+    <ImageView
+        android:id="@+id/screen_3"
+        android:layout_width="@dimen/screen_iv_width"
+        android:layout_height="@dimen/screen_iv_height"
+        android:layout_toRightOf="@id/screen_2"
+        android:paddingRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+    <ImageView
+        android:id="@+id/screen_4"
+        android:layout_width="@dimen/screen_iv_width"
+        android:layout_height="@dimen/screen_iv_height"
+        android:layout_toRightOf="@id/screen_3"
+        android:paddingRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+    <ImageView
+        android:id="@+id/screen_5"
+        android:layout_width="@dimen/screen_iv_width"
+        android:layout_height="@dimen/screen_iv_height"
+        android:layout_toRightOf="@id/screen_4"
+        android:paddingRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_default" />
+
+</RelativeLayout>

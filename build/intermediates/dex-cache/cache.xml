@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\libs\cu_volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="19.1.0"
+        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\cu_volley_8e0046e6ba3fe4f541fc4758d6aad90601667f38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\libs\xUtils-2.6.14.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="19.1.0"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\xUtils-2.6.14_a93fbc8c3bcff3cdecb2660ff6160198a5f2709f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e01128e5af34a7097ac3441497828068a13217d7">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_5a47bb030c5b7f7f82a89c573a0de56922d2ac89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\libs\xUtils-2.6.14.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\xUtils-2.6.14_a93fbc8c3bcff3cdecb2660ff6160198a5f2709f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="19.1.0"
+        sha1="58d4321e084fbea514f65434eb35c0dd1c9d84da">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\instant-run_601eac2fd3c00a9a17c808cbfd2c1e741cdad199.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-18.0.0_3b224f88351d8ace40ff4a1edd884a6e6cb8dd50.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\libs\cu_volley.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="77faa9ffd189160d1e22c58fdf5eed0a9a08b816">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\cu_volley_8e0046e6ba3fe4f541fc4758d6aad90601667f38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="19.1.0"
+        sha1="feaed42996410c66bad4adbde4694ba47dad34b5">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_5a47bb030c5b7f7f82a89c573a0de56922d2ac89.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\application\AppStore\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="bf503da0a0b4945623f4d7c6dcab8b441dd1d904">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\instant-run_601eac2fd3c00a9a17c808cbfd2c1e741cdad199.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\SDK\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="D:\android\application\AppStore\app\build\intermediates\pre-dexed\debug\support-v4-18.0.0_5cc89e106cbe1824c25cbe1e71c247950bc5943d.jar" />
+    </item>
+
+</items>
