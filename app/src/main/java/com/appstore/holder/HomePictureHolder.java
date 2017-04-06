@@ -10,6 +10,7 @@ import android.widget.AbsListView;
 import android.widget.ImageView;
 
 import com.appstore.R;
+import com.appstore.utils.BitmapUtil;
 import com.appstore.utils.UIutil;
 
 import java.util.LinkedList;
@@ -27,6 +28,9 @@ public class HomePictureHolder extends BaseHolder<List<String>> {
     boolean flag;
     @Override
     public View initView() {
+
+        bitmapUtils = BitmapUtil.getBitmap("banner");
+
         viewPager = new ViewPager(UIutil.getContext());
         viewPager.setLayoutParams(new AbsListView.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT,
                 UIutil.getDimen(R.dimen.home_headItem_height)));

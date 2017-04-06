@@ -12,6 +12,7 @@ public class FileUtil {
 
     public static final String CACHE = "cache";
     public static final String ICON = "icon";
+    public static final String DOWNLOAD = "download";
     public static final String ROOT = "AppStore";
 
     public static File getDir (String str){
@@ -56,4 +57,7 @@ public class FileUtil {
         return getDir(ICON);
     }
 
+    public static File getDownloadDir() {
+        return getDir(DOWNLOAD);
+    }
 }

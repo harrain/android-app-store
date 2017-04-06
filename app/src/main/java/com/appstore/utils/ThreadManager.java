@@ -68,6 +68,9 @@ public  class ThreadManager {
             }
             pool.execute(runnable); // 调用线程池 执行异步任务
         }
+
+
+
         /**
          * 取消任务
          * @param runnable

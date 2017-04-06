@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.appstore.R;
 import com.appstore.domain.CategoryInfo;
+import com.appstore.utils.BitmapUtil;
 import com.appstore.utils.GetHttp;
 import com.appstore.utils.UIutil;
 
@@ -37,6 +38,9 @@ public class CategoryContentHolder extends BaseHolder<CategoryInfo> {
 
     @Override
     public void refreshView(CategoryInfo data) {
+
+        bitmapUtils = BitmapUtil.getBitmap("category");
+
         // 第一块
         if(!TextUtils.isEmpty(data.getName1())&&!TextUtils.isEmpty(data.getUrl1())){
             tvs[0].setText(data.getName1());

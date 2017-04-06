@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.appstore.R;
 import com.appstore.domain.AppInfo;
+import com.appstore.utils.BitmapUtil;
 import com.appstore.utils.GetHttp;
 import com.appstore.utils.UIutil;
 import com.lidroid.xutils.ViewUtils;
@@ -77,6 +78,9 @@ public class DetailSafeHolder extends BaseHolder<AppInfo> implements View.OnClic
 
     @Override
     public void refreshView(AppInfo data) {
+
+        bitmapUtils = BitmapUtil.getBitmap(data.getPackageName());
+
         List<String> safeUrl = data.getSafeUrl();
         List<String> safeDesUrl = data.getSafeDesUrl();
         List<String> safeDes = data.getSafeDes();

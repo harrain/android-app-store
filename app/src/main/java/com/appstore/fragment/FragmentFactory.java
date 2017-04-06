@@ -10,7 +10,7 @@ import java.util.Map;
  */
 
 public class FragmentFactory {
-    private final static Map<Integer,Fragment> mFragmentFactory = new HashMap<Integer,Fragment>();
+    private final static Map<Integer,Fragment> mFragmentFactory = new HashMap<>();
 
     public static Fragment createFragment(int position){
         Fragment fragment = null;

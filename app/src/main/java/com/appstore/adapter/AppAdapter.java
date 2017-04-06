@@ -8,8 +8,10 @@ import com.appstore.DetailActivity;
 import com.appstore.domain.AppInfo;
 import com.appstore.holder.AppHolder;
 import com.appstore.holder.BaseHolder;
+import com.appstore.manager.DownloadManager;
 import com.appstore.utils.UIutil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,13 +19,23 @@ import java.util.List;
  */
 
 public abstract class AppAdapter extends DefaultAdapter<AppInfo> {
+
+    private List<AppHolder> mAppHolders = new ArrayList<>();
     public AppAdapter(List<AppInfo> appInfos, ListView listView) {
+
         super(appInfos,listView);
     }
 
     @Override
     public BaseHolder<AppInfo> getHolder() {
-        return new AppHolder();
+        AppHolder appHolder = new AppHolder();
+        mAppHolders.add(appHolder);
+        DownloadManager.getInstance().addObserver(appHolder);
+        return appHolder;
+    }
+
+    public List<AppHolder> getAppHolders() {
+        return mAppHolders;
     }
 
     @Override

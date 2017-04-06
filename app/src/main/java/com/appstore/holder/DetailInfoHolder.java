@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.appstore.R;
 import com.appstore.domain.AppInfo;
+import com.appstore.utils.BitmapUtil;
 import com.appstore.utils.GetHttp;
 import com.appstore.utils.LogUtils;
 import com.appstore.utils.UIutil;
@@ -49,6 +50,9 @@ public class DetailInfoHolder extends BaseHolder<AppInfo> {
     @Override
     public void refreshView(AppInfo data) {
         System.out.println(data.getIconUrl());
+
+        bitmapUtils = BitmapUtil.getBitmap(data.getPackageName());
+
         bitmapUtils.display(item_icon, GetHttp.URI+"image?name="+data.getIconUrl());
         item_title.setText(data.getName());
         item_rating.setRating(data.getStars());

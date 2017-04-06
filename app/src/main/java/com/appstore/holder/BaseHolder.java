@@ -15,7 +15,7 @@ public abstract class BaseHolder<Data> {
     private Data data;
     protected BitmapUtils bitmapUtils;
     public BaseHolder(){
-        bitmapUtils = BitmapUtil.getBitmap();
+        //bitmapUtils = BitmapUtil.getBitmap();
         contentView=initView();
         contentView.setTag(this);
     }

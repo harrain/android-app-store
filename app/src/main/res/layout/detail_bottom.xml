@@ -57,7 +57,7 @@
             android:textSize="18sp" />
     </FrameLayout>-->
 
-    <Button
+    <com.appstore.view.ProgressButton
         android:id="@+id/progress_btn"
         android:layout_width="match_parent"
         android:layout_height="38dp"
@@ -69,6 +69,6 @@
         android:textColor="#ffffff"
         android:textSize="18dp" 
         android:text="下载">
-    </Button>
+    </com.appstore.view.ProgressButton>
 
 </RelativeLayout>

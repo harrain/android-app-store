@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_layout"
+            android:icon="@drawable/ic_home"
+            android:title="@string/tv_home"
+            android:visible="false"/>
+        <item
+            android:id="@+id/setting_layout"
+            android:icon="@drawable/ic_setting"
+            android:title="@string/tv_setting"
+            android:visible="false" />
+        <item
+            android:id="@+id/theme_layout"
+            android:icon="@drawable/ic_theme"
+            android:title="@string/tv_theme"
+            android:visible="false" />
+        <item
+            android:id="@+id/scans_layout"
+            android:icon="@drawable/ic_scans"
+            android:title="@string/tv_scans"
+            android:visible="false" />
+        <item
+            android:id="@+id/feedback_layout"
+            android:icon="@drawable/ic_feedback"
+            android:title="@string/tv_feedback"
+            android:visible="false" />
+        <item
+            android:id="@+id/updates_layout"
+            android:icon="@drawable/ic_updates"
+            android:title="@string/tv_updates"
+            android:visible="false" />
+        <item
+            android:id="@+id/about_layout"
+            android:icon="@drawable/ic_about"
+            android:title="@string/tv_about" />
+        <item
+            android:id="@+id/exit_layout"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/tv_exit" />
+
+    </group>
+</menu>

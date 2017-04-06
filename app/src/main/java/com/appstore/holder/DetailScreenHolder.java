@@ -5,6 +5,7 @@ import android.widget.ImageView;
 
 import com.appstore.R;
 import com.appstore.domain.AppInfo;
+import com.appstore.utils.BitmapUtil;
 import com.appstore.utils.GetHttp;
 import com.appstore.utils.LogUtils;
 import com.appstore.utils.UIutil;
@@ -32,6 +33,9 @@ public class DetailScreenHolder extends BaseHolder<AppInfo> {
 
     @Override
     public void refreshView(AppInfo data) {
+
+        bitmapUtils = BitmapUtil.getBitmap(data.getPackageName());
+
         List<String> screen = data.getScreen(); // 集合的大小有可能小于5
         for(int i=0;i<5;i++){
             if(i<screen.size()){

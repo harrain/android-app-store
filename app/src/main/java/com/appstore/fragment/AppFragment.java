@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.appstore.R;
 import com.appstore.adapter.AppAdapter;
 import com.appstore.domain.AppInfo;
+import com.appstore.holder.AppHolder;
+import com.appstore.manager.DownloadManager;
 import com.appstore.protocol.AppProtocol;
 import com.appstore.utils.BaseListView;
 import com.appstore.utils.UIutil;
@@ -25,6 +27,8 @@ import java.util.Random;
 public class AppFragment extends BaseFragment {
 
     List<AppInfo> datas;
+
+    AppAdapter mAdapter;
 
     @Override
     public LoadingPage.LoadResult load() {
@@ -43,7 +47,7 @@ public class AppFragment extends BaseFragment {
     @Override
     public View createSuccessView() {
         BaseListView mListView = new BaseListView(UIutil.getContext());
-        mListView.setAdapter(new AppAdapter(datas,mListView) {
+        mAdapter = new AppAdapter(datas,mListView) {
             @Override
             protected List<AppInfo> onLoadMore() {
                 AppProtocol protocol=new AppProtocol();
@@ -51,8 +55,36 @@ public class AppFragment extends BaseFragment {
                 datas.addAll(load);
                 return load;
             }
-        });
+        };
+        mListView.setAdapter(mAdapter);
         return mListView;
+    }
+
+    @Override
+    public void onResume() {
+        // 重新添加监听
+        if (mAdapter != null) {
+            List<AppHolder> appItemHolders = mAdapter.getAppHolders();
+            for (AppHolder appItemHolder : appItemHolders) {
+                DownloadManager.getInstance().addObserver(appItemHolder);//重新添加
+            }
+            // 手动刷新-->重新获取状态,然后更新ui
+            mAdapter.notifyDataSetChanged();
+        }
+
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        // 移除监听
+        if (mAdapter != null) {
+            List<AppHolder> appItemHolders = mAdapter.getAppHolders();
+            for (AppHolder appItemHolder : appItemHolders) {
+                DownloadManager.getInstance().deleteObserver(appItemHolder);//删除
+            }
+        }
+        super.onPause();
     }
 
 }

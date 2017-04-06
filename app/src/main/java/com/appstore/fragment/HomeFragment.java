@@ -7,14 +7,18 @@ import com.appstore.R;
 import com.appstore.adapter.AppAdapter;
 import com.appstore.fragment.LoadingPage.*;//内部枚举，内部类引用
 import com.appstore.domain.AppInfo;
+import com.appstore.holder.AppHolder;
 import com.appstore.holder.HomePictureHolder;
+import com.appstore.manager.DownloadManager;
 import com.appstore.protocol.HomeProtocol;
 import com.appstore.utils.BaseListView;
 import com.appstore.utils.BitmapUtil;
+import com.appstore.utils.FileUtil;
 import com.appstore.utils.UIutil;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.bitmap.PauseOnScrollListener;
 
+import java.io.File;
 import java.util.List;
 
 
@@ -26,6 +30,8 @@ public class HomeFragment extends BaseFragment {
     List<AppInfo> datas;
     BitmapUtils bitmapUtils;
     List<String> pictures;
+
+    AppAdapter mAdapter;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -42,7 +48,7 @@ public class HomeFragment extends BaseFragment {
         View contentView = picHolder.getContentView();
         mListView.addHeaderView(contentView);
 
-        mListView.setAdapter(new AppAdapter(datas,mListView) {
+        mAdapter = new AppAdapter(datas,mListView) {
             @Override
             protected List<AppInfo> onLoadMore() {
                 HomeProtocol protocol = new HomeProtocol();
@@ -60,10 +66,10 @@ public class HomeFragment extends BaseFragment {
                 intent.putExtra("packageName",appInfo.getPackageName());
                 startActivity(intent);
             }*/
-        });
+        };
+        mListView.setAdapter(mAdapter);
 
-
-        bitmapUtils = BitmapUtil.getBitmap();
+        bitmapUtils = BitmapUtil.getBitmap("home");
         // 第二个参数 慢慢滑动的时候是否加载图片 false  加载   true 不加载
         //  第三个参数  飞速滑动的时候是否加载图片  true 不加载
         mListView.setOnScrollListener(new PauseOnScrollListener(bitmapUtils,false,true));
@@ -82,7 +88,32 @@ public class HomeFragment extends BaseFragment {
         return checkData(datas);
     }
 
+    @Override
+    public void onResume() {
+        // 重新添加监听
+        if (mAdapter != null) {
+            List<AppHolder> appItemHolders = mAdapter.getAppHolders();
+            for (AppHolder appItemHolder : appItemHolders) {
+                DownloadManager.getInstance().addObserver(appItemHolder);//重新添加
+            }
+            // 手动刷新-->重新获取状态,然后更新ui
+            mAdapter.notifyDataSetChanged();
+        }
 
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        // 移除监听
+        if (mAdapter != null) {
+            List<AppHolder> appItemHolders = mAdapter.getAppHolders();
+            for (AppHolder appItemHolder : appItemHolders) {
+                DownloadManager.getInstance().deleteObserver(appItemHolder);//删除
+            }
+        }
+        super.onPause();
+    }
 
 
 

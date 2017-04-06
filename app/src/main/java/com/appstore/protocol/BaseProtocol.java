@@ -42,7 +42,7 @@ public abstract class BaseProtocol <Data>{
     }
 
     private String loadLocal(int index) {
-        File dir = FileUtil.getCacheDir();
+        String dir = FileUtil.getCacheDir().toString();
         File file = new File(dir,getKey()+"_"+index+getParams());
         StringWriter sw ;
         String s;
@@ -93,7 +93,7 @@ public abstract class BaseProtocol <Data>{
         LogUtils.d("保存本地"+json);
         BufferedWriter bw ;
         try{
-            File dir = FileUtil.getCacheDir();
+            String dir = FileUtil.getCacheDir().toString();
             File file = new File(dir,getKey()+"_"+index+getParams());
             FileWriter fw = new FileWriter(file);
             bw =new BufferedWriter(fw);

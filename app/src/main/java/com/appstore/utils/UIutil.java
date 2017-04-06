@@ -39,6 +39,18 @@ public class UIutil {
             BaseApplication.getHandler().post(runnable);
         }
     }
+    //runOnUIThread和POSTTaskSafely一样
+    /**安全的执行一个任务*/
+    public static void postTaskSafely(Runnable task) {
+        int curThreadId = android.os.Process.myTid();
+
+        if (curThreadId == BaseApplication.getMainTid()) {// 如果当前线程是主线程
+            task.run();
+        } else {// 如果当前线程不是主线程
+            BaseApplication.getHandler().post(task);
+        }
+
+    }
 
     /**
      * 延迟执行 任务

@@ -42,7 +42,7 @@ public class SubjectFragment extends BaseFragment {
     public View createSuccessView() {
         BaseListView listView=new BaseListView(getContext());
         listView.setAdapter(new SubjectAdapter(datas,listView));
-        bitmapUtil = BitmapUtil.getBitmap();
+        bitmapUtil = BitmapUtil.getBitmap("subject");
         return listView;
     }
 
@@ -85,7 +85,12 @@ public class SubjectFragment extends BaseFragment {
             @Override
             public void refreshView(SubjectInfo subjectInfo) {
                 this.item_txt.setText(subjectInfo.getDes());
-                bitmapUtils.display(this.item_icon, "http://127.0.0.1:8090/image?name="+subjectInfo.getUrl());
+                try {
+
+                    bitmapUtils.display(this.item_icon, "http://127.0.0.1:8090/image?name="+subjectInfo.getUrl());
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         }
     }
